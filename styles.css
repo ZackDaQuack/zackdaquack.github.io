@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('https://wallpapers.com/images/hd/pixel-background-u2jnye2lgq0gv7h2.jpg');
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-attachment: fixed; /* Prevents scrolling */
+}
+
+
+h1 {
+    color: #ffffff;
+}
+
+.down-arrow {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px; 
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 100%;
+}
+
+.arrow {
+    color: #ffffff;
+    transition: transform 0.3s;
+
+}
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+.page-container {
+    background-image: url('https://wallpapers.com/images/hd/pixel-background-u2jnye2lgq0gv7h2.jpg');
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: background-position 2s ease-in-out;
+}
+
+.audio {
+    display: none;
+}
+
+.center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 500px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.test {
+    position: absolute;
+    bottom: 0%;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.no-highlight{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-text-select: none;
+    -webkit-user-select: none;
+}
+
+.socials {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_icon {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 15px;
+    color: #ffffff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social_icon:hover {
+    color: #135bd6;
+    transform: scale(1.1);
+}
+
+.username {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.username:hover {
+    color: #135bd6;
+    transform: scale(1.05);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1.5);
+        opacity: 0.9;
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        opacity: 1;
+    }
+}
+
+.glow {
+    animation: glow 4s infinite;
+}
+
+
+@keyframes snowflake-fall {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+.snowflake {
+    position: absolute;
+    font-size: 20px;
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
+    animation: snowflake-fall 4s linear infinite;
+    transform: translateY(-10%);
+}
+
+.snowflake::before {
+    content: '❄️';
+}
+
+.enter {
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.1);
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.enter h1 {
+    margin: 0;
+    filter: blur(0px);
+}
