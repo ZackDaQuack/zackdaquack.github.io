@@ -1,105 +1,96 @@
+/* Main Backgrounds */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url('https://wallpapers.com/images/hd/pixel-background-u2jnye2lgq0gv7h2.jpg');
-    background-color: #f0f0f0;
-    background-size: cover;
-    background-position: right top;
-    background-repeat: no-repeat;
     min-height: 100vh;
     position: absolute;
     left: 0;
     width: 100%;
-    background-attachment: fixed; /* Prevents scrolling */
+    background-attachment: fixed;
 }
 
-
-h1 {
-    color: #ffffff;
-}
-
-.down-arrow {
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 35px;
-    height: 35px; 
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    margin: 20px;
-    backdrop-filter: blur(10px);
-    border-radius: 100%;
-}
-
-.arrow {
-    color: #ffffff;
-    transition: transform 0.3s;
-
-}
-.arrow:hover {
-    transform: scale(1.1);
-}
-
-.page-container {
+.background {
     background-image: url('https://wallpapers.com/images/hd/pixel-background-u2jnye2lgq0gv7h2.jpg');
-    background-color: #f0f0f0;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
     background-size: cover;
-    background-position: right top;
+    background-position: center center;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    position: absolute;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    transition: background-position 2s ease-in-out;
+    height: 100%;
+    background: rgba(0, 0, 0, .97);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.audio {
-    display: none;
-}
-
-.center-box {
+.overlay-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 500px;
-    height: 400px;
-    background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
-    margin: 20px;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    text-align: center;
+}
+
+.overlay.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
 
+
+/* Text */
+h1, .song-text {
+    color: #ffffff;
+}
+
+.progress_text {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.song-title {
+    margin-bottom: 5px;
+}
+
+.author {
+    margin-top: 0px;
+}
+
+.username {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.username:hover {
+    color: #2B8C44;
+    transform: scale(1.05);
+}
+
+
+
+/* Containers */
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh;
-}
-
-.test {
-    position: absolute;
-    bottom: 0%;
 }
 
 .profile {
@@ -113,11 +104,65 @@ h1 {
     pointer-events: none;
 }
 
-.no-highlight{
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-text-select: none;
-    -webkit-user-select: none;
+.center-box,
+.bottom-box {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+.bottom-box {
+    transform: translate(-50%, 175%);
+    height: 100px;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.song-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 15%;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+.song-info {
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#song-progress {
+    appearance: none;
+    overflow: hidden;
+    height: 15px;
+    width: 150px;
+    background-color: #2B8C44;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+#song-progress::-webkit-progress-value {
+    background-color: #2B8C44;
+    border-radius: 15px;
 }
 
 .socials {
@@ -127,6 +172,25 @@ h1 {
     align-items: center;
 }
 
+.progress {
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+
+}
+
+.no-highlight{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-text-select: none;
+    -webkit-user-select: none;
+}
+
+
+
+/* Buttons */
 .social_icon {
     display: inline-block;
     font-size: 24px;
@@ -136,17 +200,15 @@ h1 {
 }
 
 .social_icon:hover {
-    color: #135bd6;
+    color: #2B8C44;
     transform: scale(1.1);
 }
 
-.username {
-    transition: color 0.3s, transform 0.3s;
-}
 
-.username:hover {
-    color: #135bd6;
-    transform: scale(1.05);
+
+/* Universal */
+.glow {
+    animation: glow 4s infinite;
 }
 
 @keyframes glow {
@@ -162,53 +224,4 @@ h1 {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         opacity: 1;
     }
-}
-
-.glow {
-    animation: glow 4s infinite;
-}
-
-
-@keyframes snowflake-fall {
-    0% {
-        transform: translateY(-10%);
-    }
-    100% {
-        transform: translateY(110vh);
-    }
-}
-
-.snowflake {
-    position: absolute;
-    font-size: 20px;
-    color: transparent;
-    text-shadow: 0 0 0 #fff;
-    animation: snowflake-fall 4s linear infinite;
-    transform: translateY(-10%);
-}
-
-.snowflake::before {
-    content: '❄️';
-}
-
-.enter {
-  position: fixed;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: brightness(0.1);
-  background-color: rgba(0, 0, 0, 0.5);
-  filter: blur(10px);
-  pointer-events: none;
-}
-
-.enter h1 {
-    margin: 0;
-    filter: blur(0px);
 }
